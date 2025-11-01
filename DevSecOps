@@ -1,0 +1,24 @@
+Yaml
+
+
+# .github/workflows/devsecops.yml
+name: DevSecOps CI
+
+on:[push,pull_request]
+
+jobs:
+ build:
+  run-on: ubuntu latest
+  steps:
+   - name: checkout code
+     uses: snyk/actions/node@master
+     env:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN}}
+
+   - name: Run code quality and security scan
+ uses: sonarsource/sonarcloud-github-action@master
+     with:
+      args: >
+       -Dsonar.projectKey=myproject
+       -Dsonar.organization=myorg
+
