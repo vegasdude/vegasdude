@@ -25,7 +25,7 @@ echo "Deploying app..." # Example: npm run deploy or AWS s3 sync ./build s3://yo
    workflows:
     build-and-deploy:
      jobs:
-       - build:
+       - build
        - deploy:
           requires:
            - build
