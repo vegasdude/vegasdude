@@ -1,0 +1,19 @@
+Yaml
+
+
+version:
+
+jobs:
+  build:
+   docker:
+- image: cimg/base:stable # or use python, node, etc.
+   steps:
+    - checkout # pulls your code from GitHub 
+    - run:
+       name: Install dependencies 
+       command:|
+        echo "Installing dependencie..."
+sudo apt-get update && sudu apt-get install -y curl
+    - run:
+       name: Run tests
+       command: echo "Running tests..."
