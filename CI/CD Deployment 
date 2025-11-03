@@ -1,0 +1,36 @@
+Yaml
+
+
+version:
+
+jobs:
+ build:
+  docker:
+   - image: cimg/node:20.10
+  steps:
+   - checkout 
+   - run: npm ci
+   - run: npm run build
+
+  deploy:
+   docker:
+    - image: cimg/base:stable
+   steps:
+    - checkout
+    - run:
+       name: Deploy
+       command:|
+echo "Deploying app..." # Example: npm run deploy or AWS s3 sync ./build s3://your-bucket
+
+   workflows:
+    build-and-deploy:
+     jobs:
+       - build:
+       - deploy:
+          requires:
+           - build
+          filters:
+            branches:
+             only: main
+
+  
