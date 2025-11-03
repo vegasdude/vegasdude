@@ -1,0 +1,24 @@
+Yaml
+
+
+version: 2.1
+
+jobs:
+ build:
+  docker:
+   - image: cimg/base:stable
+  steps:
+   - checkout
+   - run:
+     name: check repository health
+     command:|
+echo "checking files in your GitHub profile repository..."
+     Is -aI
+echo "No deployment needed -- just verifying repository structure."
+   - run:
+      name: Markdown lint (optional)
+      command:|
+sudo apt-get update && sudo apt-get install -y
+npm
+       npm install -g markdown lint-cli
+       markdownlint README md || true
