@@ -50,7 +50,7 @@ Markdown
 
 Markdown 
 
-![Anthony's GitHub stats](https://github-readme-stats.vercel.app/api?username=AnthonyDudek&show_icons=true)
+![Anthony's GitHub stats](https://github-readme-stats.vercel.app/api?vegasdude=AnthonyDudek&show_icons=true)
 
 - 📱💻 Most used tools Python, YAML, Git
 
