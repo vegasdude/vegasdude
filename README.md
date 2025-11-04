@@ -27,6 +27,30 @@ Markdown
 - 📱💻 Currently working on automating builds for 
        my projects 
 
+- 📱💻 https://circleci.com/docs/sample-config/
+                    
+                  Type
+             Documentation 
+
+                 Purpose
+        Learn Circle CI Setup 
+ 
+- 📱💻 https://circleci.com/developer/orbs/
+
+                  Type
+          Technical Registry 
+
+                Purpose
+        Find orbs/templates
+
+- 📱💻 https://app.circleci.com/pipelines/github/vegasdude
+
+                  Type
+           Personal Dashboard 
+
+                Purpose 
+      Display live build status on GitHub
+
 - 📱💻 https://github-readme-stats.vercel.app/api?username=anthony-dudek&show_icons=true&theme=tokyonight<h1 align="center">Hey 👋, I'm Anthony Dudek</h1>
 <h3 align="center">🚀 DevOps & CI/CD Enthusiast | Python & Cloud Learner</h3>
 
