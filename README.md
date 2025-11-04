@@ -36,7 +36,15 @@ Markdown
        clickable, so users go to
        your CircleCI project
        page
+- 📱💻 
 
+Markdown
+
+![Build Status](https://img.shields.io/circleci/build/github/username/repo/main?logo=circleci)
+![License](https://img.shields.io/github/license/username/repo)
+![Last Commit](https://img.shields.io/github/last-commit/username/repo)
+![Repo Size](https://img.shields.io/github/repo-size/username/repo)
+![Followers](https://img.shields.io/github/followers/username?label=Followers)
 - 📱💻 I'm Currently learning DevOps & CI/CD (CircleCI, GitHub Action)
 
 - 📱💻 Most used tools Python, YAML, Git
