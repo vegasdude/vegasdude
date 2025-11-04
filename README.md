@@ -46,6 +46,11 @@ Markdown
 ![Repo Size](https://img.shields.io/github/repo-size/username/repo)
 ![Followers](https://img.shields.io/github/followers/username?label=Followers)
 - 📱💻 I'm Currently learning DevOps & CI/CD (CircleCI, GitHub Action)
+- 📱💻 Repo:https://github.com/anuraghazra/github-readme-stats
+
+Markdown 
+
+![Anthony's GitHub stats](https://github-readme-stats.vercel.app/api?username=AnthonyDudek&show_icons=true)
 
 - 📱💻 Most used tools Python, YAML, Git
 
