@@ -61,6 +61,49 @@ Md
 [![GitHub followers](https://img.shields.io/github/followers/vegasdude?label=Follow&style=social)](https://github.com/vegasdude)
 [![GitHub stars](https://img.shields.io/github/stars/vegasdude?affiliations=OWNER%2CCOLLABORATOR&style=social)](https://github.com/vegasdude?tab=repositories)
 
+- 📱💻 Template 1
+
+
+Markdown
+
+
+# 👋 Hey there, I'm Anthony Dudek
+
+🚀 DevOps | 💻 Automation Enthusiast | 🛠️ Open Source Explorer  
+
+---
+
+### 🧠 About Me
+- 🔭 Working on automating DevOps pipelines using **CircleCI** and **GitHub Actions**
+- 🌱 Currently learning **DevSecOps** and **Cloud Infrastructure**
+- 🧰 Tools I use daily: `Python`, `YAML`, `Git`, and `Docker`
+- 🎯 Goal: Build secure, automated CI/CD systems for reliable deployments
+
+---
+
+### ⚡ Tech Stack
+| Area | Tools |
+|------|--------|
+| **Languages** | Python, Bash, YAML |
+| **DevOps** | GitHub Actions, CircleCI, Docker |
+| **Security** | Dependabot, Renovate |
+| **Cloud** | AWS (Learning) |
+
+---
+
+### 📊 GitHub Overview
+![Anthony’s GitHub stats](https://github-readme-stats.vercel.app/api?username=anthony-dudek&show_icons=true&theme=tokyonight)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anthony-dudek&layout=compact&theme=tokyonight)
+
+---
+
+### 🌐 Connect
+- 💼 [LinkedIn](https://linkedin.com)
+- 📧 [Email](mailto:example@email.com)
+- 🖥️ [GitHub Projects](https://github.com/anthony-dudek?tab=repositories)
+
+⭐ *Continuous improvement through automation and innovation.*
+
 
 - 📱💻 https://github-readme-stats.vercel.app/api?username=anthony-dudek&show_icons=true&theme=tokyonight<h1 align="center">Hey 👋, I'm Anthony Dudek</h1>
 <h3 align="center">🚀 DevOps & CI/CD Enthusiast | Python & Cloud Learner</h3>
