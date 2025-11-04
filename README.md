@@ -1,4 +1,4 @@
-### Hi there 👋
+I'm### Hi there 👋
 
 <!--
 **vegasdude/vegasdude** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -51,6 +51,15 @@ Markdown
 Markdown 
 
 ![Anthony's GitHub stats](https://github-readme-stats.vercel.app/api?username=vegasdude&show_icons=true)
+- 📱💻 
+Markdown 
+
+![Stars](https://img.shields.io/github/stars/username/repo?cacheSeconds=300)
+
+- 📱💻 
+Markdown
+
+![CI](https://github.com/username/repo/actions/workflows/ci.yml/badge.svg)
 
 - 📱💻 Most used tools Python, YAML, Git
 
