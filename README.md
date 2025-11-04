@@ -52,7 +52,7 @@ Markdown
       Display live build status on GitHub
 
 
-- 📱💻 GitHub Followers or Stars or Repositories 
+- 📱💻 GitHub Followers or Stars 
 
 
 Md
