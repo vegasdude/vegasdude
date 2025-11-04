@@ -20,6 +20,23 @@ Markdown
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/vegasdude/vegasdude/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/vegasdude/vegasdude/tree/main)
 
+- 📱💻 Part
+       https://dl.circleci.com/status-badge/img/...
+
+       Description 
+       Loads the badge image
+        (shows "passing" /
+          "failed")
+
+- 📱💻 Part
+  https://dl.circleci.com/status-badge/redirect/...
+
+       Description 
+       makes the badge
+       clickable, so users go to
+       your CircleCI project
+       page
+
 - 📱💻 I'm Currently learning DevOps & CI/CD (CircleCI, GitHub Action)
 
 - 📱💻 Most used tools Python, YAML, Git
