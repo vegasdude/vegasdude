@@ -16,6 +16,9 @@ Here are some ideas to get you started:
 -->
 Hi, I'm Anthony Dudek welcome to my GitHub profile!
  
+Markdown
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/vegasdude/REPONAME/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/USERNAME/REPONAME/tree/main)
 
 - 📱💻 I'm Currently learning DevOps & CI/CD (CircleCI, GitHub Action)
 
