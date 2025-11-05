@@ -265,5 +265,5 @@ Python
 from github import Github
 
 g = Github("your_personal_access_token")
-repo = g.get_repo("yourusername/my-ai-agent")
+repo = g.get_repo("vegasdude/my-ai-agent")
 repo.create_issue(title="AI Agent Task", body="I just created this issue automatically!") 
