@@ -266,4 +266,16 @@ from github import Github
 
 g = Github("your_personal_access_token")
 repo = g.get_repo("vegasdude/my-ai-agent")
-repo.create_issue(title="AI Agent Task", body="I just created this issue automatically!") 
+repo.create_issue(title="AI Agent Task", body="I just created this issue automatically!")
+
+- 📱💻 
+
+Python
+
+from github import Github
+
+# Replace with your own token
+g = Github("ghp_yourActualTokenHere")
+
+repo = g.get_repo("yourusername/your-repo")
+repo.create_issue(title="Bot-created issue", body="This issue was created by my AI agent!") 
