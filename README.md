@@ -1,4 +1,4 @@
-I'm### Hi there 👋
+8I'm### Hi there 👋
 
 <!--
 **vegasdude/vegasdude** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -277,5 +277,5 @@ from github import Github
 # Replace with your own token
 g = Github("ghp_yourActualTokenHere")
 
-repo = g.get_repo("yourusername/your-repo")
+repo = g.get_repo("vegasdude/your-repo")
 repo.create_issue(title="Bot-created issue", body="This issue was created by my AI agent!") 
