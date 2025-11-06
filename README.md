@@ -297,7 +297,7 @@ This is a sample data science repository that includes data cleaning, analysis, 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/data-science-project.git
+git clone https://github.com/vegasdude/data-science-project.git
 cd data-science-project
 
 # 2. Create a virtual environment
