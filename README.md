@@ -278,7 +278,7 @@ from github import Github
 g = Github("ghp_yourActualTokenHere")
 
 repo = g.get_repo("vegasdude/your-repo")
-repo.create_issue(title="Bot-created issue", body="This issue was created by my AI agent!") 
+repo.create_issue(title="Bot-created issue", body="This issue was created by my AI agent!")
 
 - 📱💻 Example README.md
 
