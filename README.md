@@ -318,3 +318,21 @@ matplotlib
 scikit-learn
 jupyter
 seaborn
+
+- 📱💻 C++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!";
+    return 0;
+}
+
+- 📱💻 C#
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello, World!");
+    }
+}
