@@ -1,0 +1,30 @@
+my-project/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+│
+├── .env.example
+├── requirements.txt          # (For Python) or package.json (for Node.js)
+├── Dockerfile                # Optional - if you use Docker
+├── Makefile                  # Optional - automation commands
+│
+├── docs/
+│   ├── overview.md
+│   └── installation.md
+│
+├── src/
+│   ├── main.py               # Or index.js, app.cpp, etc.
+│   ├── utils.py
+│   └── __init__.py
+│
+├── tests/
+│   └── test_main.py
+│
+└── .github/
+    └── workflows/
+        └── main.yml          # GitHub Actions workflow
