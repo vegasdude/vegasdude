@@ -9,5 +9,5 @@ A short description of what your project does.
 
 ## 🛠️ Installation
 ```bash
-git clone https://github.com/yourusername/my-project.git
+git clone https://github.com/vegasdude/my-project.git
 cd my-project
