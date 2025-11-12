@@ -1,0 +1,11 @@
+ai-assistant-samples/
+ ├─ backend/
+ ├─ cli/
+ ├─ vscode-extension/
+ ├─ github-actions/
+ ├─ examples/
+ ├─ scripts/
+ ├─ templates/
+ ├─ README.md
+ ├─ LICENSE
+ ├─ CONTRIBUTING.md
