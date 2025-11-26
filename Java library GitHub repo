@@ -1,0 +1,1 @@
+implementation("com.anthropic:anthropic-java:2.10.0")
