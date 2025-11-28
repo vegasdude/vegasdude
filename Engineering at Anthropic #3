@@ -1,0 +1,29 @@
+team = await get_team_members("engineering")
+
+# Fetch budgets for each unique level
+levels = list(set(m["level"] for m in team))
+budget_results = await asyncio.gather(*[
+    get_budget_by_level(level) for level in levels
+])
+
+# Create a lookup dictionary: {"junior": budget1, "senior": budget2, ...}
+budgets = {level: budget for level, budget in zip(levels, budget_results)}
+
+# Fetch all expenses in parallel
+expenses = await asyncio.gather(*[
+    get_expenses(m["id"], "Q3") for m in team
+])
+
+# Find employees who exceeded their travel budget
+exceeded = []
+for member, exp in zip(team, expenses):
+    budget = budgets[member["level"]]
+    total = sum(e["amount"] for e in exp)
+    if total > budget["travel_limit"]:
+        exceeded.append({
+            "name": member["name"],
+            "spent": total,
+            "limit": budget["travel_limit"]
+        })
+
+print(json.dumps(exceeded))
