@@ -1,0 +1,11 @@
+// Good
+{
+    "name": "search_customer_orders",
+    "description": "Search for customer orders by date range, status, or total amount. Returns order details including items, shipping, and payment info."
+}
+
+// Bad
+{
+    "name": "query_db_orders",
+    "description": "Execute order query"
+}
