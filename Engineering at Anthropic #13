@@ -1,0 +1,10 @@
+client.beta.messages.create(
+    betas=["advanced-tool-use-2025-11-20"],
+    model="claude-sonnet-4-5-20250929",
+    max_tokens=4096,
+    tools=[
+        {"type": "tool_search_tool_regex_20251119", "name": "tool_search_tool_regex"},
+        {"type": "code_execution_20250825", "name": "code_execution"},
+        # Your tools with defer_loading, allowed_callers, and input_examples
+    ]
+)
