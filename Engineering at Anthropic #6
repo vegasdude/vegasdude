@@ -1,0 +1,10 @@
+{
+  "type": "tool_use",
+  "id": "toolu_xyz",
+  "name": "get_expenses",
+  "input": {"user_id": "emp_123", "quarter": "Q3"},
+  "caller": {
+    "type": "code_execution_20250825",
+    "tool_id": "srvtoolu_abc"
+  }
+}
