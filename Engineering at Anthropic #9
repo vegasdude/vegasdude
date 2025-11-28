@@ -1,0 +1,36 @@
+{
+    "name": "create_ticket",
+    "input_schema": { /* same schema as above */ },
+    "input_examples": [
+      {
+        "title": "Login page returns 500 error",
+        "priority": "critical",
+        "labels": ["bug", "authentication", "production"],
+        "reporter": {
+          "id": "USR-12345",
+          "name": "Jane Smith",
+          "contact": {
+            "email": "jane@acme.com",
+            "phone": "+1-555-0123"
+          }
+        },
+        "due_date": "2024-11-06",
+        "escalation": {
+          "level": 2,
+          "notify_manager": true,
+          "sla_hours": 4
+        }
+      },
+      {
+        "title": "Add dark mode support",
+        "labels": ["feature-request", "ui"],
+        "reporter": {
+          "id": "USR-67890",
+          "name": "Alex Chen"
+        }
+      },
+      {
+        "title": "Update API documentation"
+      }
+    ]
+  }
