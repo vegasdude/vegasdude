@@ -1,0 +1,10 @@
+{
+  "type": "mcp_toolset",
+  "mcp_server_name": "google-drive",
+  "default_config": {"defer_loading": true}, # defer loading the entire server
+  "configs": {
+    "search_files": {
+"defer_loading": false
+    }  // Keep most used tool loaded
+  }
+}
