@@ -1,0 +1,542 @@
+# Claude API Project Structure
+
+This is a complete folder structure for a new Claude API orchestration project with budget compliance, tool calling, and code execution capabilities.
+
+## Folder Structure
+
+```
+claude-project/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── .gitignore
+├── config/
+│   ├── __init__.py
+│   ├── settings.py
+│   └── budget_limits.json
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── orchestrator.py
+│   ├── tools/
+│   │   ├── __init__.py
+│   │   ├── tool_registry.py
+│   │   ├── web_search.py
+│   │   ├── code_executor.py
+│   │   └── data_processor.py
+│   ├── budget/
+│   │   ├── __init__.py
+│   │   ├── tracker.py
+│   │   └── compliance.py
+│   └── utils/
+│       ├── __init__.py
+│       ├── logger.py
+│       └── validators.py
+├── skills/
+│   ├── custom-skill/
+│   │   └── SKILL.md
+│   └── template-skill/
+│       └── SKILL.md
+├── tests/
+│   ├── __init__.py
+│   ├── test_orchestrator.py
+│   ├── test_tools.py
+│   └── test_budget.py
+├── logs/
+│   └── .gitkeep
+└── docs/
+    ├── architecture.md
+    ├── api_reference.md
+    └── deployment.md
+```
+
+## Core Files Content
+
+### README.md
+```markdown
+# Claude API Orchestration Project
+
+A production-ready Claude API project with budget compliance, tool orchestration, and parallel execution capabilities.
+
+## Features
+- Budget tracking and compliance monitoring
+- Programmatic tool calling with parallel execution
+- Custom skills integration
+- Code execution capabilities
+- Comprehensive logging and error handling
+
+## Setup
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Copy `.env.example` to `.env` and add your API key
+4. Configure budget limits in `config/budget_limits.json`
+5. Run: `python src/main.py`
+
+## Usage
+See docs/api_reference.md for detailed API documentation.
+```
+
+### requirements.txt
+```
+anthropic>=0.40.0
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+aiohttp>=3.9.0
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+```
+
+### .env.example
+```
+ANTHROPIC_API_KEY=your_api_key_here
+MODEL_NAME=claude-sonnet-4-20250514
+MAX_TOKENS=4096
+BUDGET_LIMIT_DAILY=100.00
+BUDGET_LIMIT_MONTHLY=3000.00
+LOG_LEVEL=INFO
+ALLOWED_CALLERS=authorized_service_1,authorized_service_2
+```
+
+### .gitignore
+```
+# Environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Logs
+logs/*.log
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+```
+
+### config/settings.py
+```python
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+
+class Settings:
+    # API Configuration
+    ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+    MODEL_NAME = os.getenv("MODEL_NAME", "claude-sonnet-4-20250514")
+    MAX_TOKENS = int(os.getenv("MAX_TOKENS", "4096"))
+    
+    # Budget Configuration
+    BUDGET_LIMIT_DAILY = float(os.getenv("BUDGET_LIMIT_DAILY", "100.00"))
+    BUDGET_LIMIT_MONTHLY = float(os.getenv("BUDGET_LIMIT_MONTHLY", "3000.00"))
+    
+    # Tool Configuration
+    ALLOWED_CALLERS = os.getenv("ALLOWED_CALLERS", "").split(",")
+    CODE_EXECUTION_ENABLED = os.getenv("CODE_EXECUTION_ENABLED", "true").lower() == "true"
+    
+    # Paths
+    BASE_DIR = Path(__file__).parent.parent
+    LOGS_DIR = BASE_DIR / "logs"
+    SKILLS_DIR = BASE_DIR / "skills"
+    
+    # Logging
+    LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+
+settings = Settings()
+```
+
+### config/budget_limits.json
+```json
+{
+  "models": {
+    "claude-sonnet-4-20250514": {
+      "input_cost_per_million": 3.00,
+      "output_cost_per_million": 15.00,
+      "cache_write_per_million": 3.75,
+      "cache_read_per_million": 0.30
+    },
+    "claude-opus-4-20250514": {
+      "input_cost_per_million": 15.00,
+      "output_cost_per_million": 75.00,
+      "cache_write_per_million": 18.75,
+      "cache_read_per_million": 1.50
+    }
+  },
+  "limits": {
+    "per_request_max": 10.00,
+    "daily_max": 100.00,
+    "monthly_max": 3000.00
+  },
+  "alerts": {
+    "daily_threshold_percent": 80,
+    "monthly_threshold_percent": 90
+  }
+}
+```
+
+### src/main.py
+```python
+import asyncio
+from orchestrator import ClaudeOrchestrator
+from config.settings import settings
+from utils.logger import setup_logger
+
+logger = setup_logger(__name__)
+
+async def main():
+    """Main entry point for Claude orchestration"""
+    orchestrator = ClaudeOrchestrator(
+        api_key=settings.ANTHROPIC_API_KEY,
+        model=settings.MODEL_NAME
+    )
+    
+    # Example: Run a task with tool calling
+    prompt = "Search for recent AI developments and summarize the top 3 findings"
+    
+    try:
+        response = await orchestrator.execute(
+            prompt=prompt,
+            tools=["web_search", "data_processor"],
+            max_tokens=settings.MAX_TOKENS
+        )
+        
+        logger.info(f"Response: {response}")
+        logger.info(f"Budget used: ${orchestrator.get_session_cost():.4f}")
+        
+    except Exception as e:
+        logger.error(f"Error executing task: {e}")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### src/orchestrator.py
+```python
+import anthropic
+from typing import List, Dict, Any
+from budget.tracker import BudgetTracker
+from tools.tool_registry import ToolRegistry
+from utils.logger import setup_logger
+
+logger = setup_logger(__name__)
+
+class ClaudeOrchestrator:
+    """Main orchestrator for Claude API interactions with budget compliance"""
+    
+    def __init__(self, api_key: str, model: str):
+        self.client = anthropic.Anthropic(api_key=api_key)
+        self.model = model
+        self.budget_tracker = BudgetTracker()
+        self.tool_registry = ToolRegistry()
+        
+    async def execute(
+        self,
+        prompt: str,
+        tools: List[str] = None,
+        max_tokens: int = 4096
+    ) -> Dict[str, Any]:
+        """Execute a prompt with optional tools and budget tracking"""
+        
+        # Check budget before execution
+        if not self.budget_tracker.can_execute():
+            raise Exception("Budget limit exceeded")
+        
+        # Prepare tools if specified
+        tool_definitions = []
+        if tools:
+            tool_definitions = [
+                self.tool_registry.get_tool(tool_name) 
+                for tool_name in tools
+            ]
+        
+        # Execute API call
+        message = self.client.messages.create(
+            model=self.model,
+            max_tokens=max_tokens,
+            messages=[{"role": "user", "content": prompt}],
+            tools=tool_definitions if tool_definitions else anthropic.NOT_GIVEN
+        )
+        
+        # Track usage
+        self.budget_tracker.track_usage(message.usage)
+        
+        logger.info(f"API call completed. Tokens: {message.usage.input_tokens}/{message.usage.output_tokens}")
+        
+        return {
+            "content": message.content,
+            "usage": message.usage,
+            "cost": self.budget_tracker.get_session_cost()
+        }
+    
+    def get_session_cost(self) -> float:
+        """Get current session cost"""
+        return self.budget_tracker.get_session_cost()
+```
+
+### src/tools/tool_registry.py
+```python
+from typing import Dict, Any
+
+class ToolRegistry:
+    """Registry for managing available tools"""
+    
+    def __init__(self):
+        self.tools = self._initialize_tools()
+    
+    def _initialize_tools(self) -> Dict[str, Dict[str, Any]]:
+        """Initialize available tools"""
+        return {
+            "web_search": {
+                "name": "web_search",
+                "description": "Search the web for information",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "query": {
+                            "type": "string",
+                            "description": "The search query"
+                        }
+                    },
+                    "required": ["query"]
+                }
+            },
+            "code_executor": {
+                "name": "code_executor",
+                "description": "Execute Python code safely",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "type": "string",
+                            "description": "Python code to execute"
+                        }
+                    },
+                    "required": ["code"]
+                }
+            },
+            "data_processor": {
+                "name": "data_processor",
+                "description": "Process and analyze data",
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "array",
+                            "description": "Data to process"
+                        },
+                        "operation": {
+                            "type": "string",
+                            "description": "Operation to perform"
+                        }
+                    },
+                    "required": ["data", "operation"]
+                }
+            }
+        }
+    
+    def get_tool(self, tool_name: str) -> Dict[str, Any]:
+        """Get tool definition by name"""
+        if tool_name not in self.tools:
+            raise ValueError(f"Tool {tool_name} not found")
+        return self.tools[tool_name]
+    
+    def list_tools(self) -> List[str]:
+        """List all available tools"""
+        return list(self.tools.keys())
+```
+
+### src/budget/tracker.py
+```python
+import json
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, Any
+from config.settings import settings
+
+class BudgetTracker:
+    """Track and enforce budget limits"""
+    
+    def __init__(self):
+        self.config = self._load_config()
+        self.daily_usage = 0.0
+        self.monthly_usage = 0.0
+        self.session_usage = 0.0
+        
+    def _load_config(self) -> Dict[str, Any]:
+        """Load budget configuration"""
+        config_path = settings.BASE_DIR / "config" / "budget_limits.json"
+        with open(config_path) as f:
+            return json.load(f)
+    
+    def track_usage(self, usage: Any) -> None:
+        """Track token usage and calculate cost"""
+        model_config = self.config["models"].get(settings.MODEL_NAME, {})
+        
+        input_cost = (usage.input_tokens / 1_000_000) * model_config.get("input_cost_per_million", 0)
+        output_cost = (usage.output_tokens / 1_000_000) * model_config.get("output_cost_per_million", 0)
+        
+        total_cost = input_cost + output_cost
+        
+        self.session_usage += total_cost
+        self.daily_usage += total_cost
+        self.monthly_usage += total_cost
+        
+    def can_execute(self) -> bool:
+        """Check if execution is within budget limits"""
+        limits = self.config["limits"]
+        
+        if self.daily_usage >= limits["daily_max"]:
+            return False
+        if self.monthly_usage >= limits["monthly_max"]:
+            return False
+            
+        return True
+    
+    def get_session_cost(self) -> float:
+        """Get current session cost"""
+        return self.session_usage
+    
+    def get_budget_status(self) -> Dict[str, Any]:
+        """Get current budget status"""
+        limits = self.config["limits"]
+        return {
+            "daily": {
+                "used": self.daily_usage,
+                "limit": limits["daily_max"],
+                "remaining": limits["daily_max"] - self.daily_usage
+            },
+            "monthly": {
+                "used": self.monthly_usage,
+                "limit": limits["monthly_max"],
+                "remaining": limits["monthly_max"] - self.monthly_usage
+            },
+            "session": self.session_usage
+        }
+```
+
+### src/utils/logger.py
+```python
+import logging
+from pathlib import Path
+from config.settings import settings
+
+def setup_logger(name: str) -> logging.Logger:
+    """Setup logger with file and console handlers"""
+    logger = logging.getLogger(name)
+    logger.setLevel(getattr(logging, settings.LOG_LEVEL))
+    
+    # Console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_format = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+    console_handler.setFormatter(console_format)
+    
+    # File handler
+    settings.LOGS_DIR.mkdir(exist_ok=True)
+    file_handler = logging.FileHandler(
+        settings.LOGS_DIR / f'{name}.log'
+    )
+    file_handler.setLevel(logging.DEBUG)
+    file_format = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
+    )
+    file_handler.setFormatter(file_format)
+    
+    logger.addHandler(console_handler)
+    logger.addHandler(file_handler)
+    
+    return logger
+```
+
+### skills/template-skill/SKILL.md
+```markdown
+---
+name: template-skill
+description: A template skill for creating custom Claude skills with specific capabilities and workflows
+---
+
+# Template Skill
+
+This is a template skill that demonstrates the structure and format for creating custom skills.
+
+## Purpose
+
+Define what this skill does and when Claude should use it.
+
+## Instructions
+
+1. Step-by-step instructions for Claude
+2. Include specific guidelines
+3. Add examples where helpful
+
+## Examples
+
+- Example usage 1: "When the user asks for X, do Y"
+- Example usage 2: "Process data by following these steps..."
+
+## Guidelines
+
+- Be specific and clear
+- Include edge cases
+- Define success criteria
+```
+
+### tests/test_orchestrator.py
+```python
+import pytest
+from src.orchestrator import ClaudeOrchestrator
+from config.settings import settings
+
+@pytest.mark.asyncio
+async def test_orchestrator_initialization():
+    """Test orchestrator initializes correctly"""
+    orchestrator = ClaudeOrchestrator(
+        api_key=settings.ANTHROPIC_API_KEY,
+        model=settings.MODEL_NAME
+    )
+    assert orchestrator.model == settings.MODEL_NAME
+    assert orchestrator.budget_tracker is not None
+
+@pytest.mark.asyncio
+async def test_budget_tracking():
+    """Test budget tracking functionality"""
+    orchestrator = ClaudeOrchestrator(
+        api_key=settings.ANTHROPIC_API_KEY,
+        model=settings.MODEL_NAME
+    )
+    initial_cost = orchestrator.get_session_cost()
+    assert initial_cost == 0.0
+```
+
+## Next Steps
+
+1. Copy this structure to your project directory
+2. Install dependencies: `pip install -r requirements.txt`
+3. Configure your `.env` file with your Anthropic API key
+4. Customize budget limits in `config/budget_limits.json`
+5. Add your custom tools in `src/tools/`
+6. Create custom skills in `skills/`
+7. Run tests: `pytest tests/`
+8. Start building: `python src/main.py`
+```
