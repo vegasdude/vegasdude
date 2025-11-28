@@ -1,0 +1,8 @@
+{
+  "type": "server_tool_use",
+  "id": "srvtoolu_abc",
+  "name": "code_execution",
+  "input": {
+    "code": "team = get_team_members('engineering')\n..." # the code example above
+  }
+}
