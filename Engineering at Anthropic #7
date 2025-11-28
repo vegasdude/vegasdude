@@ -1,0 +1,7 @@
+{
+  "type": "code_execution_tool_result",
+  "tool_use_id": "srvtoolu_abc",
+  "content": {
+    "stdout": "[{\"name\": \"Alice\", \"spent\": 12500, \"limit\": 10000}...]"
+  }
+}
