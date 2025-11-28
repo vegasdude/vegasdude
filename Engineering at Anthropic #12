@@ -1,0 +1,11 @@
+{
+    "name": "get_orders",
+    "description": "Retrieve orders for a customer.
+Returns:
+    List of order objects, each containing:
+    - id (str): Order identifier
+    - total (float): Order total in USD
+    - status (str): One of 'pending', 'shipped', 'delivered'
+    - items (list): Array of {sku, quantity, price}
+    - created_at (str): ISO 8601 timestamp"
+}
