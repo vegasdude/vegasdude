@@ -1,0 +1,34 @@
+{
+  "name": "create_ticket",
+  "input_schema": {
+    "properties": {
+      "title": {"type": "string"},
+      "priority": {"enum": ["low", "medium", "high", "critical"]},
+      "labels": {"type": "array", "items": {"type": "string"}},
+      "reporter": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "contact": {
+            "type": "object",
+            "properties": {
+              "email": {"type": "string"},
+              "phone": {"type": "string"}
+            }
+          }
+        }
+      },
+      "due_date": {"type": "string"},
+      "escalation": {
+        "type": "object",
+        "properties": {
+          "level": {"type": "integer"},
+          "notify_manager": {"type": "boolean"},
+          "sla_hours": {"type": "integer"}
+        }
+      }
+    },
+    "required": ["title"]
+  }
+}
