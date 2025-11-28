@@ -1,0 +1,154 @@
+# Long-Running Agent Engineering Folder Template
+
+## Project Structure
+
+```
+agent-project/
+├── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── api-reference.md
+│   ├── deployment.md
+│   └── troubleshooting.md
+├── src/
+│   ├── agents/
+│   │   ├── base_agent.py
+│   │   ├── specialized_agents/
+│   │   └── agent_registry.py
+│   ├── core/
+│   │   ├── orchestrator.py
+│   │   ├── state_manager.py
+│   │   ├── memory/
+│   │   │   ├── short_term.py
+│   │   │   ├── long_term.py
+│   │   │   └── vector_store.py
+│   │   └── context_builder.py
+│   ├── tools/
+│   │   ├── tool_interface.py
+│   │   ├── web_tools.py
+│   │   ├── data_tools.py
+│   │   └── custom_tools/
+│   ├── prompts/
+│   │   ├── system_prompts.py
+│   │   ├── task_templates/
+│   │   └── prompt_versioning.py
+│   └── utils/
+│       ├── logging.py
+│       ├── error_handling.py
+│       └── monitoring.py
+├── config/
+│   ├── agent_configs.yaml
+│   ├── model_settings.yaml
+│   └── environment.yaml
+├── data/
+│   ├── persistent_state/
+│   ├── conversation_logs/
+│   └── training_data/
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── end_to_end/
+├── scripts/
+│   ├── deploy.sh
+│   ├── run_agent.py
+│   └── backup_state.py
+├── monitoring/
+│   ├── metrics/
+│   ├── dashboards/
+│   └── alerts/
+└── requirements.txt
+```
+
+## Key Component Descriptions
+
+### `/src/agents/`
+- **base_agent.py**: Core agent class with shared functionality
+- **specialized_agents/**: Domain-specific agent implementations
+- **agent_registry.py**: Registry for managing multiple agent instances
+
+### `/src/core/`
+- **orchestrator.py**: Coordinates multiple agents and manages workflow
+- **state_manager.py**: Handles agent state persistence and recovery
+- **memory/**: Short-term, long-term, and vector-based memory systems
+- **context_builder.py**: Constructs context windows efficiently
+
+### `/src/tools/`
+Tool implementations following Anthropic's tool use patterns:
+- Web search, data processing, API integrations
+- Custom tool interfaces for domain-specific needs
+
+### `/src/prompts/`
+- System prompts with versioning
+- Task-specific prompt templates
+- Prompt engineering utilities
+
+### `/config/`
+Configuration files for:
+- Agent behaviors and capabilities
+- Model parameters (temperature, max_tokens, etc.)
+- Environment-specific settings
+
+### `/data/persistent_state/`
+Critical for long-running agents:
+- Checkpoints for agent state
+- Conversation history
+- User preferences and context
+
+### `/monitoring/`
+Essential for production agents:
+- Performance metrics (latency, token usage)
+- Custom dashboards
+- Alert configurations for failures
+
+## Best Practices for Long-Running Agents
+
+1. **State Management**: Implement robust checkpointing to recover from failures
+2. **Context Window Management**: Use summarization and selective memory retrieval
+3. **Error Handling**: Graceful degradation and automatic retry logic
+4. **Monitoring**: Track token usage, response times, and error rates
+5. **Versioning**: Version prompts and configurations for reproducibility
+6. **Testing**: Comprehensive tests for multi-turn conversations
+7. **Security**: Proper API key management and input sanitization
+
+## Initialization Checklist
+
+- [ ] Set up virtual environment
+- [ ] Install Anthropic SDK and dependencies
+- [ ] Configure API keys and environment variables
+- [ ] Initialize state management system
+- [ ] Set up logging and monitoring
+- [ ] Create initial agent configurations
+- [ ] Write integration tests
+- [ ] Document deployment process
+
+## Example: Running Your First Agent
+
+```python
+from src.core.orchestrator import AgentOrchestrator
+from src.agents.base_agent import BaseAgent
+from src.core.state_manager import StateManager
+
+# Initialize components
+state_manager = StateManager(persist_dir="data/persistent_state")
+orchestrator = AgentOrchestrator(state_manager=state_manager)
+
+# Create and register agent
+agent = BaseAgent(
+    model="claude-sonnet-4-20250514",
+    system_prompt="You are a helpful assistant..."
+)
+orchestrator.register_agent("main_agent", agent)
+
+# Run agent with state persistence
+result = orchestrator.run(
+    agent_id="main_agent",
+    user_input="Start processing...",
+    session_id="user_123"
+)
+```
+
+## Resources
+
+- [Anthropic API Documentation](https://docs.anthropic.com)
+- [Claude Tool Use Guide](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)
+- [Prompt Engineering Best Practices](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
