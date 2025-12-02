@@ -1,0 +1,176 @@
+# Quantum Computing with Claude - Project Structure
+
+## 📁 Folder Organization
+
+```
+quantum-computing/
+├── 01-fundamentals/
+│   ├── qubit-basics.md
+│   ├── superposition-entanglement.md
+│   ├── quantum-gates.md
+│   └── measurement-theory.md
+│
+├── 02-algorithms/
+│   ├── grovers-algorithm.md
+│   ├── shors-algorithm.md
+│   ├── quantum-fourier-transform.md
+│   └── variational-quantum-eigensolver.md
+│
+├── 03-code-examples/
+│   ├── qiskit/
+│   │   ├── basic-circuits.py
+│   │   ├── bell-state.py
+│   │   └── grover-search.py
+│   ├── cirq/
+│   │   ├── hello-qubit.py
+│   │   └── quantum-teleportation.py
+│   └── pennylane/
+│       ├── quantum-ml.py
+│       └── hybrid-computation.py
+│
+├── 04-applications/
+│   ├── cryptography.md
+│   ├── optimization-problems.md
+│   ├── quantum-machine-learning.md
+│   └── drug-discovery.md
+│
+├── 05-hardware/
+│   ├── superconducting-qubits.md
+│   ├── trapped-ions.md
+│   ├── photonic-quantum.md
+│   └── topological-qubits.md
+│
+├── 06-research-notes/
+│   ├── papers/
+│   ├── experiments/
+│   └── ideas.md
+│
+├── 07-claude-prompts/
+│   ├── circuit-design-prompts.md
+│   ├── debugging-help.md
+│   └── concept-explanations.md
+│
+└── README.md
+```
+
+## 📄 Key File Templates
+
+### README.md
+```markdown
+# Quantum Computing Learning Journey
+
+## Overview
+Personal repository for quantum computing studies, experiments, and projects built with Claude's assistance.
+
+## Goals
+- Master quantum computing fundamentals
+- Implement key quantum algorithms
+- Explore real-world applications
+- Build quantum circuits and simulations
+
+## Resources
+- Qiskit Documentation
+- IBM Quantum Experience
+- Research papers and tutorials
+
+## Progress Tracker
+- [ ] Complete fundamentals
+- [ ] Implement 5 core algorithms
+- [ ] Build quantum ML model
+- [ ] Contribute to open-source quantum project
+```
+
+### 01-fundamentals/qubit-basics.md
+```markdown
+# Qubit Basics
+
+## What is a Qubit?
+A quantum bit (qubit) is the fundamental unit of quantum information.
+
+## Key Properties
+- Superposition: Can exist in multiple states simultaneously
+- State representation: |ψ⟩ = α|0⟩ + β|1⟩
+- Probability: |α|² + |β|² = 1
+
+## Bloch Sphere
+Visual representation of qubit states on a unit sphere.
+
+## Examples
+[Add code examples and visualizations here]
+```
+
+### 03-code-examples/qiskit/basic-circuits.py
+```python
+# Basic Quantum Circuit with Qiskit
+
+from qiskit import QuantumCircuit, execute, Aer
+from qiskit.visualization import plot_histogram
+
+# Create a quantum circuit with 2 qubits and 2 classical bits
+qc = QuantumCircuit(2, 2)
+
+# Apply Hadamard gate to first qubit
+qc.h(0)
+
+# Apply CNOT gate
+qc.cx(0, 1)
+
+# Measure
+qc.measure([0, 1], [0, 1])
+
+# Simulate
+simulator = Aer.get_backend('qasm_simulator')
+job = execute(qc, simulator, shots=1000)
+result = job.result()
+counts = result.get_counts(qc)
+
+print("Measurement results:", counts)
+```
+
+### 07-claude-prompts/circuit-design-prompts.md
+```markdown
+# Effective Claude Prompts for Quantum Computing
+
+## Circuit Design
+"Help me design a quantum circuit that creates a Bell state using Qiskit. 
+Explain each gate and why it's needed."
+
+## Algorithm Implementation
+"Walk me through implementing Grover's algorithm for a 3-qubit search problem. 
+Include the oracle design and amplitude amplification steps."
+
+## Debugging
+"I'm getting unexpected measurement results in my quantum circuit. 
+Here's my code: [paste code]. What might be causing this?"
+
+## Concept Clarification
+"Explain quantum entanglement using a simple analogy, then show me 
+how to create entangled qubits in code."
+
+## Optimization
+"Review my quantum circuit and suggest ways to reduce gate count 
+while maintaining functionality."
+```
+
+## 🚀 Getting Started
+
+1. **Create the folder structure** on your local machine or cloud storage
+2. **Populate with your notes** as you learn
+3. **Use Claude** to help fill in content, debug code, and explain concepts
+4. **Track progress** by updating your README
+5. **Iterate and expand** based on your interests
+
+## 💡 Tips for Working with Claude
+
+- Share your quantum code for debugging and optimization
+- Ask for explanations at different complexity levels
+- Request visualizations and diagrams
+- Use Claude to generate practice problems
+- Get help translating between quantum frameworks (Qiskit, Cirq, etc.)
+
+## 📚 Recommended Next Steps
+
+1. Start with fundamentals folder - build strong foundation
+2. Experiment with code examples - hands-on practice
+3. Document your learning in research notes
+4. Build a capstone project combining multiple concepts
