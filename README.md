@@ -342,7 +342,8 @@ class Program {
 }
 
 - 📱💻
+
 <p align="center">
-  <img src="https://img.icons8.com/3d-fluency/256/iphone14-pro.png" width="200"/>
-  <img src="https://img.icons8.com/3d-fluency/256/laptop.png" width="220"/>
+  <img src="https://media.giphy.com/media/ptqAPKRnCgl3jKqWnE/giphy.gif" width="250"/>
+  <img src="https://media.giphy.com/media/YrlBrkZTDj8Eo/giphy.gif" width="200"/>
 </p>
