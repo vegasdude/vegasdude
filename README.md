@@ -340,3 +340,7 @@ class Program {
         Console.WriteLine("Hello, World!");
     }
 }
+<p align="center">
+  <img src="https://img.icons8.com/3d-fluency/256/iphone14-pro.png" width="200"/>
+  <img src="https://img.icons8.com/3d-fluency/256/laptop.png" width="220"/>
+</p>
