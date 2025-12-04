@@ -15,6 +15,10 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 Hi, I'm Anthony Dudek welcome to my GitHub profile!
+<p align="center">
+  <img src="https://img.icons8.com/fluency/256/smartphone.png" width="180"/>
+  <img src="https://img.icons8.com/fluency/256/laptop.png" width="200"/>
+</p>
  
 Markdown
 
