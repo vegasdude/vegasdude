@@ -283,6 +283,16 @@ g = Github("ghp_yourActualTokenHere")
 
 repo = g.get_repo("vegasdude/your-repo")
 repo.create_issue(title="Bot-created issue", body="This issue was created by my AI agent!")
+- 📱💻
+
+https://media.giphy.com/media/ptqAPKRnCgl3jKqWnE/giphy.gif
+
+- 📱💻
+
+<p align="center">
+  <img src="https://media.giphy.com/media/ptqAPKRnCgl3jKqWnE/giphy.gif" width="250"/>
+  <img src="https://media.giphy.com/media/YrlBrkZTDj8Eo/giphy.gif" width="200"/>
+</p>
 
 - 📱💻 Example README.md
 
@@ -340,10 +350,3 @@ class Program {
         Console.WriteLine("Hello, World!");
     }
 }
-
-- 📱💻
-
-<p align="center">
-  <img src="https://media.giphy.com/media/ptqAPKRnCgl3jKqWnE/giphy.gif" width="250"/>
-  <img src="https://media.giphy.com/media/YrlBrkZTDj8Eo/giphy.gif" width="200"/>
-</p>
