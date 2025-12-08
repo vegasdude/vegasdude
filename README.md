@@ -14,6 +14,16 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+- 📱💻 
+# Hi 👋 I'm Anthony Dudek
+
+[![License](https://img.shields.io/badge/license-LICENSE_NAME-blue.svg)](./LICENSE)
+
+## License
+
+This profile repository and its contents are licensed under the **(MIT, Apache-2.0, GPL-3.0, CCO-1.0, Unlicensed)**.  
+See the [LICENSE](./LICENSE) file for details.
+
 Hi, I'm Anthony Dudek welcome to my GitHub profile!
 <p align="center">
   <img src="https://img.icons8.com/fluency/256/smartphone.png" width="180"/>
