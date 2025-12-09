@@ -1,0 +1,205 @@
+# Setup Instructions
+
+## Quick Start Guide for All Sample Files
+
+---
+
+## 📁 Files Included
+
+1. **claude_api_example.py** - Claude API usage examples
+2. **gpu_computing_example.py** - GPU computing demonstrations
+3. **local_llm_setup.md** - Guide for running local AI models
+4. **requirements.txt** - Python dependencies
+5. **SETUP_INSTRUCTIONS.md** - This file
+
+---
+
+## 🚀 Initial Setup
+
+### Step 1: Install Python
+- Download Python 3.8+ from https://www.python.org/
+- During installation, check "Add Python to PATH"
+- Verify: `python --version`
+
+### Step 2: Create Project Folder
+```bash
+mkdir claude_computing_project
+cd claude_computing_project
+```
+
+### Step 3: Copy All Files
+- Save each artifact to this folder
+- Make sure all 5 files are in the same directory
+
+### Step 4: Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🔑 Claude API Setup
+
+### Get Your API Key
+1. Go to https://console.anthropic.com/
+2. Sign in or create account
+3. Navigate to "API Keys" section
+4. Create a new key
+5. Copy the key (starts with "sk-ant-")
+
+### Set Environment Variable (Recommended)
+
+**Windows:**
+```cmd
+setx ANTHROPIC_API_KEY "your-key-here"
+```
+
+**Mac/Linux:**
+```bash
+echo 'export ANTHROPIC_API_KEY="your-key-here"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+**Or create .env file:**
+```
+ANTHROPIC_API_KEY=your-key-here
+```
+
+---
+
+## 🎮 GPU Setup (For Local Computing)
+
+### NVIDIA GPU
+1. Check if you have NVIDIA GPU: `nvidia-smi`
+2. Install CUDA Toolkit: https://developer.nvidia.com/cuda-downloads
+3. Verify PyTorch sees GPU:
+```python
+import torch
+print(torch.cuda.is_available())
+```
+
+### AMD GPU
+1. Install ROCm: https://www.amd.com/en/products/software/rocm.html
+2. Follow platform-specific instructions
+
+### No GPU?
+- Everything still works on CPU (just slower)
+- Consider cloud GPU: Google Colab, RunPod, Vast.ai
+
+---
+
+## 🧪 Testing Each Component
+
+### Test 1: Claude API
+```bash
+python claude_api_example.py
+```
+Expected: Should see Claude responding to prompts
+
+### Test 2: GPU Computing
+```bash
+python gpu_computing_example.py
+```
+Expected: GPU info and benchmark results
+
+### Test 3: Local LLM (Ollama)
+```bash
+ollama run llama3.2:3b
+```
+Expected: Chat interface with local AI model
+
+---
+
+## 📊 Performance Comparison Reference
+
+| System | Compute Power | RAM | Year |
+|--------|---------------|-----|------|
+| PlayStation 3 | 0.23 TFLOPS | 512 MB | 2006 |
+| iPhone 15 | ~2 TFLOPS | 6 GB | 2023 |
+| RTX 3060 | 13 TFLOPS | 12 GB | 2021 |
+| RTX 4090 | 82 TFLOPS | 24 GB | 2022 |
+| Claude API | ~1000s TFLOPS | Unknown | 2024 |
+
+**Your modern GPU likely has 50-300x the power of a PS3!**
+
+---
+
+## 🐛 Troubleshooting
+
+### "Module not found" error
+```bash
+pip install [missing-module]
+```
+
+### Claude API "Authentication failed"
+- Check API key is set correctly
+- Verify key hasn't expired
+- Check for typos in key
+
+### GPU not detected
+- Update GPU drivers
+- Reinstall CUDA toolkit
+- Try `torch.cuda.is_available()` to debug
+
+### Out of memory errors
+- Close other applications
+- Try smaller models
+- Reduce batch size in code
+
+---
+
+## 💡 What to Try First
+
+1. **Start with Claude API** - Easiest to set up
+2. **Test GPU computing** - See your hardware power
+3. **Install Ollama** - Try local AI models
+4. **Experiment** - Modify the code samples!
+
+---
+
+## 📚 Learning Resources
+
+- Anthropic Docs: https://docs.anthropic.com
+- PyTorch Tutorials: https://pytorch.org/tutorials/
+- Ollama Models: https://ollama.com/library
+- CUDA Programming: https://developer.nvidia.com/cuda-education
+
+---
+
+## 🎯 Next Steps
+
+Once everything works:
+- Modify the example scripts for your projects
+- Try different Claude models (Opus, Haiku)
+- Experiment with larger local LLMs
+- Build your own AI-powered applications
+
+---
+
+## 💰 Cost Considerations
+
+**Claude API:**
+- Pay per token used
+- Sonnet 4: ~$3 per million input tokens
+- Check pricing: https://www.anthropic.com/pricing
+
+**Local LLMs:**
+- Free to run (just electricity)
+- One-time hardware cost
+- Full privacy and control
+
+**Recommendation:** Start with Claude API for quality, add local LLMs for cost-sensitive tasks.
+
+---
+
+## ⚡ Performance Tips
+
+1. **Use GPU when possible** - 10-100x faster
+2. **Batch processing** - Process multiple items together
+3. **Cache models** - Load once, use many times
+4. **Quantization** - Use 4-bit or 8-bit models for speed
+5. **Right model for task** - Don't use Opus when Haiku works
+
+---
+
+Have fun exploring! 🚀
