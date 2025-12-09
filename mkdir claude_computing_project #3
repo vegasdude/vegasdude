@@ -1,0 +1,184 @@
+"""
+GPU Computing Examples
+Demonstrates how to use your GPU for parallel computing tasks
+
+Requirements:
+- pip install torch numpy
+- NVIDIA GPU with CUDA support (or AMD with ROCm)
+"""
+
+import torch
+import numpy as np
+import time
+
+def check_gpu_info():
+    """Display GPU information"""
+    print("=== GPU Information ===")
+    if torch.cuda.is_available():
+        print(f"✓ CUDA is available!")
+        print(f"GPU Name: {torch.cuda.get_device_name(0)}")
+        print(f"GPU Count: {torch.cuda.device_count()}")
+        
+        gpu_memory = torch.cuda.get_device_properties(0).total_memory / 1e9
+        print(f"GPU Memory: {gpu_memory:.2f} GB")
+        
+        # Calculate TFLOPS (approximate)
+        # Modern GPUs: RTX 3060 ≈ 13 TFLOPS, RTX 4090 ≈ 82 TFLOPS
+        print(f"\nFor reference:")
+        print(f"- PlayStation 3: 0.23 TFLOPS")
+        print(f"- Your GPU likely has: 5-80+ TFLOPS (depending on model)")
+    else:
+        print("✗ CUDA not available - will use CPU")
+        print("Install CUDA toolkit or check GPU drivers")
+    print()
+
+def matrix_multiply_comparison():
+    """Compare CPU vs GPU matrix multiplication"""
+    print("=== Matrix Multiplication Benchmark ===")
+    
+    # Create large matrices
+    size = 5000
+    print(f"Multiplying two {size}x{size} matrices...")
+    
+    # CPU Version
+    print("\nCPU Version:")
+    a_cpu = np.random.randn(size, size).astype(np.float32)
+    b_cpu = np.random.randn(size, size).astype(np.float32)
+    
+    start = time.time()
+    c_cpu = np.dot(a_cpu, b_cpu)
+    cpu_time = time.time() - start
+    print(f"Time: {cpu_time:.3f} seconds")
+    
+    # GPU Version (if available)
+    if torch.cuda.is_available():
+        print("\nGPU Version:")
+        a_gpu = torch.randn(size, size, device='cuda')
+        b_gpu = torch.randn(size, size, device='cuda')
+        
+        # Warm up GPU
+        _ = torch.matmul(a_gpu, b_gpu)
+        torch.cuda.synchronize()
+        
+        start = time.time()
+        c_gpu = torch.matmul(a_gpu, b_gpu)
+        torch.cuda.synchronize()
+        gpu_time = time.time() - start
+        print(f"Time: {gpu_time:.3f} seconds")
+        print(f"\nSpeedup: {cpu_time/gpu_time:.1f}x faster on GPU!")
+    print()
+
+def parallel_computation_example():
+    """Example of parallel computation on GPU"""
+    print("=== Parallel Computation Example ===")
+    
+    if not torch.cuda.is_available():
+        print("GPU not available - skipping GPU example")
+        return
+    
+    # Simulate processing millions of calculations in parallel
+    n = 10_000_000
+    print(f"Processing {n:,} calculations in parallel...")
+    
+    # Create data on GPU
+    x = torch.randn(n, device='cuda')
+    y = torch.randn(n, device='cuda')
+    
+    # Perform complex calculation on all elements simultaneously
+    start = time.time()
+    result = torch.sin(x) * torch.cos(y) + torch.sqrt(torch.abs(x * y))
+    torch.cuda.synchronize()
+    elapsed = time.time() - start
+    
+    print(f"Completed in: {elapsed:.4f} seconds")
+    print(f"That's {n/elapsed:,.0f} operations per second!")
+    print()
+
+def simple_neural_network():
+    """Simple neural network training on GPU"""
+    print("=== Neural Network Training Example ===")
+    
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    print(f"Using device: {device}")
+    
+    # Simple neural network
+    class SimpleNet(torch.nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.fc1 = torch.nn.Linear(100, 50)
+            self.fc2 = torch.nn.Linear(50, 10)
+        
+        def forward(self, x):
+            x = torch.relu(self.fc1(x))
+            x = self.fc2(x)
+            return x
+    
+    # Create model and move to GPU
+    model = SimpleNet().to(device)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    
+    print("Training for 100 iterations...")
+    start = time.time()
+    
+    for i in range(100):
+        # Generate random data
+        inputs = torch.randn(32, 100).to(device)
+        targets = torch.randint(0, 10, (32,)).to(device)
+        
+        # Forward pass
+        outputs = model(inputs)
+        loss = torch.nn.functional.cross_entropy(outputs, targets)
+        
+        # Backward pass
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+        if (i + 1) % 20 == 0:
+            print(f"Iteration {i+1}/100, Loss: {loss.item():.4f}")
+    
+    elapsed = time.time() - start
+    print(f"\nTraining completed in {elapsed:.2f} seconds")
+    print(f"Speed: {100/elapsed:.1f} iterations/second")
+    print()
+
+def memory_usage_example():
+    """Show GPU memory usage"""
+    print("=== GPU Memory Usage ===")
+    
+    if not torch.cuda.is_available():
+        print("GPU not available")
+        return
+    
+    print("Creating large tensor on GPU...")
+    
+    # Allocate memory
+    large_tensor = torch.randn(10000, 10000, device='cuda')
+    
+    # Check memory
+    allocated = torch.cuda.memory_allocated() / 1e9
+    reserved = torch.cuda.memory_reserved() / 1e9
+    
+    print(f"Memory allocated: {allocated:.2f} GB")
+    print(f"Memory reserved: {reserved:.2f} GB")
+    
+    # Clear memory
+    del large_tensor
+    torch.cuda.empty_cache()
+    
+    print(f"Memory after cleanup: {torch.cuda.memory_allocated()/1e9:.2f} GB")
+    print()
+
+if __name__ == "__main__":
+    # Run all examples
+    check_gpu_info()
+    matrix_multiply_comparison()
+    parallel_computation_example()
+    simple_neural_network()
+    memory_usage_example()
+    
+    print("="*50)
+    print("All examples completed!")
+    print("\nYour GPU can perform calculations that would have taken")
+    print("supercomputers decades ago. Modern consumer GPUs have")
+    print("1000x more compute power than the PlayStation 3!")
