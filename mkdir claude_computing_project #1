@@ -1,0 +1,86 @@
+"""
+Claude API Example Script
+Demonstrates how to use Anthropic's Claude API for various tasks
+
+Requirements:
+- pip install anthropic
+- Get API key from: https://console.anthropic.com/
+"""
+
+import anthropic
+import os
+
+# Set your API key (get from console.anthropic.com)
+# Option 1: Set as environment variable (recommended)
+# export ANTHROPIC_API_KEY='your-key-here'
+# Option 2: Set directly (less secure)
+API_KEY = os.environ.get("ANTHROPIC_API_KEY", "your-api-key-here")
+
+client = anthropic.Anthropic(api_key=API_KEY)
+
+def simple_chat(prompt):
+    """Basic Claude API call"""
+    message = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=1000,
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return message.content[0].text
+
+def conversation_with_history(messages_history):
+    """Multi-turn conversation with context"""
+    message = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=2000,
+        messages=messages_history
+    )
+    return message.content[0].text
+
+def analyze_code(code_snippet):
+    """Use Claude to analyze code"""
+    prompt = f"""Analyze this code and provide feedback on:
+1. Potential bugs
+2. Performance improvements
+3. Best practices
+
+Code:
+```python
+{code_snippet}
+```
+"""
+    return simple_chat(prompt)
+
+# Example Usage
+if __name__ == "__main__":
+    print("=== Simple Chat Example ===")
+    response = simple_chat("Explain what a teraflop is in simple terms")
+    print(response)
+    print("\n" + "="*50 + "\n")
+    
+    print("=== Conversation with History ===")
+    conversation = [
+        {"role": "user", "content": "What's the difference between CPU and GPU?"},
+    ]
+    response1 = conversation_with_history(conversation)
+    print(f"Claude: {response1}\n")
+    
+    # Continue conversation
+    conversation.append({"role": "assistant", "content": response1})
+    conversation.append({"role": "user", "content": "Which is better for AI?"})
+    response2 = conversation_with_history(conversation)
+    print(f"Claude: {response2}\n")
+    
+    print("="*50 + "\n")
+    
+    print("=== Code Analysis Example ===")
+    sample_code = """
+def calculate_average(numbers):
+    total = 0
+    for num in numbers:
+        total = total + num
+    return total / len(numbers)
+"""
+    analysis = analyze_code(sample_code)
+    print(analysis)
