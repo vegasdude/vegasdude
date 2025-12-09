@@ -21,7 +21,7 @@ Here are some ideas to get you started:
 
 ## License
 
-This profile repository and its contents are licensed under the **(MIT, Apache-2.0, GPL-3.0, CCO-1.0, Unlicensed)**.  
+This profile repository and its contents are licensed under the **(MIT LICENSE)**.  
 See the [LICENSE](./LICENSE) file for details.
 
 Hi, I'm Anthony Dudek welcome to my GitHub profile!
