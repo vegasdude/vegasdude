@@ -1,0 +1,21 @@
+# Python Package Requirements
+# Install with: pip install -r requirements.txt
+
+# Claude API
+anthropic>=0.40.0
+
+# Local LLM support
+ollama>=0.1.0
+
+# GPU Computing
+torch>=2.0.0
+numpy>=1.24.0
+
+# Optional but recommended
+transformers>=4.30.0  # For Hugging Face models
+accelerate>=0.20.0    # For model optimization
+bitsandbytes>=0.41.0  # For model quantization
+
+# Utilities
+requests>=2.31.0
+python-dotenv>=1.0.0  # For environment variables
