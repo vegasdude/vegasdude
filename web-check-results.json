@@ -1,0 +1,1306 @@
+{
+  "ssl": {
+    "subject": {
+      "CN": "github.com"
+    },
+    "issuer": {
+      "C": "GB",
+      "O": "Sectigo Limited",
+      "CN": "Sectigo Public Server Authentication CA DV E36"
+    },
+    "subjectaltname": "DNS:github.com, DNS:www.github.com",
+    "infoAccess": {
+      "CA Issuers - URI": [
+        "http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVE36.crt"
+      ],
+      "OCSP - URI": [
+        "http://ocsp.sectigo.com"
+      ]
+    },
+    "ca": false,
+    "bits": 256,
+    "pubkey": {
+      "type": "Buffer",
+      "data": [
+        4,
+        103,
+        165,
+        117,
+        80,
+        150,
+        24,
+        7,
+        95,
+        85,
+        49,
+        36,
+        168,
+        82,
+        65,
+        83,
+        183,
+        157,
+        56,
+        152,
+        129,
+        55,
+        177,
+        119,
+        236,
+        222,
+        82,
+        148,
+        23,
+        230,
+        218,
+        239,
+        213,
+        75,
+        121,
+        44,
+        145,
+        187,
+        84,
+        135,
+        69,
+        199,
+        34,
+        147,
+        108,
+        38,
+        183,
+        45,
+        171,
+        41,
+        103,
+        241,
+        49,
+        179,
+        59,
+        248,
+        168,
+        55,
+        244,
+        105,
+        66,
+        62,
+        147,
+        75,
+        194
+      ]
+    },
+    "asn1Curve": "prime256v1",
+    "nistCurve": "P-256",
+    "valid_from": "Jan  6 00:00:00 2026 GMT",
+    "valid_to": "Apr  5 23:59:59 2026 GMT",
+    "fingerprint": "E3:B3:2D:AB:1E:68:5B:16:94:5D:14:99:82:4F:65:69:58:3A:9A:61",
+    "fingerprint256": "54:1C:D0:29:8C:F1:F1:9A:AE:F4:38:6E:0F:C4:C1:3E:89:27:85:E7:1D:BA:51:33:B6:B9:82:0E:F6:1B:2C:E8",
+    "fingerprint512": "27:0D:9A:96:63:43:46:BC:D9:4D:D1:A5:61:13:61:6B:23:E1:7F:E7:B5:01:94:BC:DF:64:10:47:6D:54:3C:FF:45:07:33:84:92:0A:15:45:3A:1F:BA:9D:CC:31:80:2D:F4:A3:FF:3C:E2:7D:2F:66:1C:61:88:6E:22:28:5E:A7",
+    "ext_key_usage": [
+      "1.3.6.1.5.5.7.3.1"
+    ],
+    "serialNumber": "02765689FEE52F85C4C8A47650E84BBE"
+  },
+  "dns": {
+    "A": {
+      "address": "140.82.112.4",
+      "family": 4
+    },
+    "AAAA": [
+      "140.82.112.4"
+    ],
+    "MX": [],
+    "TXT": [
+      {
+        "exchange": "aspmx.l.google.com",
+        "priority": 1
+      },
+      {
+        "exchange": "alt3.aspmx.l.google.com",
+        "priority": 10
+      },
+      {
+        "exchange": "alt4.aspmx.l.google.com",
+        "priority": 10
+      },
+      {
+        "exchange": "alt1.aspmx.l.google.com",
+        "priority": 5
+      },
+      {
+        "exchange": "alt2.aspmx.l.google.com",
+        "priority": 5
+      }
+    ],
+    "NS": [
+      [
+        "docusign=087098e3-3d46-47b7-9b4e-8a23028154cd"
+      ],
+      [
+        "facebook-domain-verification=39xu4jzl7roi7x0n93ldkxjiaarx50"
+      ],
+      [
+        "google-site-verification=82Le34Flgtd15ojYhHlGF_6g72muSjamlMVThBOJpks"
+      ],
+      [
+        "google-site-verification=UTM-3akMgubp6tQtgEuAkYNYLyYAvpTnnSrDMWoDR3o"
+      ],
+      [
+        "jamf-site-verification=XtaPNIYghF_e_xRDI8CjgQ"
+      ],
+      [
+        "krisp-domain-verification=ZlyiK7XLhnaoUQb2hpak1PLY7dFkl1WE"
+      ],
+      [
+        "loom-site-verification=f3787154f1154b7880e720a511ea664d"
+      ],
+      [
+        "miro-verification=d2e174fdb00c71e0bcf58f8e58c3da2dd80dcfa9"
+      ],
+      [
+        "shopify-verification-code=t1YPwcmvnxZyBycaCpk1MPyWoFs72o"
+      ],
+      [
+        "stripe-verification=f88ef17321660a01bab1660454192e014defa29ba7b8de9633c69d6b4912217f"
+      ],
+      [
+        "v=spf1 ip4:192.30.252.0/22 include:_netblocks.google.com include:_netblocks2.google.com include:_netblocks3.google.com include:spf.protection.outlook.com include:mail.zendesk.com include:_spf.salesforce.com include:servers.mcsv.net include:mktomail.com ip",
+        "4:62.253.227.114 ip4:166.78.69.169 ip4:166.78.69.170 ip4:166.78.71.131 ip4:167.89.101.2 ip4:167.89.101.192/28 ip4:192.254.112.60 ip4:192.254.112.98/31 ip4:192.254.113.10 ip4:192.254.113.101 ip4:192.254.114.176  ~all"
+      ],
+      [
+        "MS=6BF03E6AF5CB689E315FB6199603BABF2C88D805"
+      ],
+      [
+        "MS=ms44452932"
+      ],
+      [
+        "MS=ms58704441"
+      ],
+      [
+        "TAILSCALE-xOzoDvFUzZr5YYVCQFuD"
+      ],
+      [
+        "adobe-idp-site-verification=b92c9e999aef825edc36e0a3d847d2dbad5b2fc0e05c79ddd7a16139b48ecf4b"
+      ],
+      [
+        "apple-domain-verification=RyQhdzTl6Z6x8ZP4"
+      ],
+      [
+        "atlassian-domain-verification=jjgw98AKv2aeoYFxiL/VFaoyPkn3undEssTRuMg6C/3Fp/iqhkV4HVV7WjYlVeF8"
+      ],
+      [
+        "calendly-site-verification=at0DQARi7IZvJtXQAWhMqpmIzpvoBNF7aam5VKKxP"
+      ]
+    ],
+    "CNAME": [
+      "dns1.p08.nsone.net",
+      "dns2.p08.nsone.net",
+      "dns3.p08.nsone.net",
+      "dns4.p08.nsone.net",
+      "ns-1283.awsdns-32.org",
+      "ns-1707.awsdns-21.co.uk",
+      "ns-421.awsdns-52.com",
+      "ns-520.awsdns-01.net"
+    ],
+    "SOA": [],
+    "SRV": {
+      "nsname": "ns-1707.awsdns-21.co.uk",
+      "hostmaster": "awsdns-hostmaster.amazon.com",
+      "serial": 1,
+      "refresh": 7200,
+      "retry": 900,
+      "expire": 1209600,
+      "minttl": 86400
+    },
+    "PTR": []
+  },
+  "security-txt": {
+    "isPresent": true,
+    "foundIn": "/.well-known/security.txt",
+    "content": "Contact: https://hackerone.com/github\nAcknowledgments: https://hackerone.com/github/hacktivity\nPreferred-Languages: en\nCanonical: https://github.com/.well-known/security.txt\nPolicy: https://bounty.github.com\nHiring: https://github.careers\nExpires: 2026-02-06T03:19:21z\n",
+    "isPgpSigned": false,
+    "fields": {
+      "Contact": "https://hackerone.com/github",
+      "Acknowledgments": "https://hackerone.com/github/hacktivity",
+      "Preferred-Languages": "en",
+      "Canonical": "https://github.com/.well-known/security.txt",
+      "Policy": "https://bounty.github.com",
+      "Hiring": "https://github.careers",
+      "Expires": "2026-02-06T03:19:21z"
+    }
+  },
+  "dnssec": {
+    "DNSKEY": {
+      "isFound": false,
+      "answer": null,
+      "response": {
+        "Status": 3,
+        "TC": false,
+        "RD": true,
+        "RA": true,
+        "AD": true,
+        "CD": false,
+        "Question": [
+          {
+            "name": "https://github.com/vegasdude.",
+            "type": 48
+          }
+        ],
+        "Authority": [
+          {
+            "name": ".",
+            "type": 6,
+            "TTL": 86399,
+            "data": "a.root-servers.net. nstld.verisign-grs.com. 2026010601 1800 900 604800 86400"
+          }
+        ]
+      }
+    },
+    "DS": {
+      "isFound": false,
+      "answer": null,
+      "response": {
+        "Status": 3,
+        "TC": false,
+        "RD": true,
+        "RA": true,
+        "AD": true,
+        "CD": false,
+        "Question": [
+          {
+            "name": "https://github.com/vegasdude.",
+            "type": 43
+          }
+        ],
+        "Authority": [
+          {
+            "name": ".",
+            "type": 6,
+            "TTL": 86400,
+            "data": "a.root-servers.net. nstld.verisign-grs.com. 2026010601 1800 900 604800 86400"
+          }
+        ],
+        "Comment": "Response from 2001:503:ba3e::2:30."
+      }
+    },
+    "RRSIG": {
+      "isFound": false,
+      "answer": null,
+      "response": {
+        "Status": 3,
+        "TC": false,
+        "RD": true,
+        "RA": true,
+        "AD": true,
+        "CD": false,
+        "Question": [
+          {
+            "name": "https://github.com/vegasdude.",
+            "type": 46
+          }
+        ],
+        "Authority": [
+          {
+            "name": ".",
+            "type": 6,
+            "TTL": 86399,
+            "data": "a.root-servers.net. nstld.verisign-grs.com. 2026010601 1800 900 604800 86400"
+          }
+        ]
+      }
+    }
+  },
+  "hsts": {
+    "message": "HSTS header does not include all subdomains.",
+    "compatible": false,
+    "hstsHeader": null
+  },
+  "status": {
+    "isUp": true,
+    "responseTime": 263.78493899991736,
+    "responseCode": 200
+  },
+  "txt-records": {
+    "stripe-verification": "f88ef17321660a01bab1660454192e014defa29ba7b8de9633c69d6b4912217f",
+    "v": "spf1 ip4:192.30.252.0/22 include:_netblocks.google.com include:_netblocks2.google.com include:_netblocks3.google.com include:spf.protection.outlook.com include:mail.zendesk.com include:_spf.salesforce.com include:servers.mcsv.net include:mktomail.com ip",
+    "4:62.253.227.114 ip4:166.78.69.169 ip4:166.78.69.170 ip4:166.78.71.131 ip4:167.89.101.2 ip4:167.89.101.192/28 ip4:192.254.112.60 ip4:192.254.112.98/31 ip4:192.254.113.10 ip4:192.254.113.101 ip4:192.254.114.176  ~all": "",
+    "MS": "ms58704441",
+    "TAILSCALE-xOzoDvFUzZr5YYVCQFuD": "",
+    "adobe-idp-site-verification": "b92c9e999aef825edc36e0a3d847d2dbad5b2fc0e05c79ddd7a16139b48ecf4b",
+    "apple-domain-verification": "RyQhdzTl6Z6x8ZP4",
+    "atlassian-domain-verification": "jjgw98AKv2aeoYFxiL/VFaoyPkn3undEssTRuMg6C/3Fp/iqhkV4HVV7WjYlVeF8",
+    "calendly-site-verification": "at0DQARi7IZvJtXQAWhMqpmIzpvoBNF7aam5VKKxP",
+    "docusign": "087098e3-3d46-47b7-9b4e-8a23028154cd",
+    "facebook-domain-verification": "39xu4jzl7roi7x0n93ldkxjiaarx50",
+    "google-site-verification": "UTM-3akMgubp6tQtgEuAkYNYLyYAvpTnnSrDMWoDR3o",
+    "jamf-site-verification": "XtaPNIYghF_e_xRDI8CjgQ",
+    "krisp-domain-verification": "ZlyiK7XLhnaoUQb2hpak1PLY7dFkl1WE",
+    "loom-site-verification": "f3787154f1154b7880e720a511ea664d",
+    "miro-verification": "d2e174fdb00c71e0bcf58f8e58c3da2dd80dcfa9",
+    "shopify-verification-code": "t1YPwcmvnxZyBycaCpk1MPyWoFs72o"
+  },
+  "block-lists": {
+    "blocklists": [
+      {
+        "server": "AdGuard",
+        "serverIp": "176.103.130.130",
+        "isBlocked": false
+      },
+      {
+        "server": "AdGuard Family",
+        "serverIp": "176.103.130.132",
+        "isBlocked": false
+      },
+      {
+        "server": "CleanBrowsing Adult",
+        "serverIp": "185.228.168.10",
+        "isBlocked": false
+      },
+      {
+        "server": "CleanBrowsing Family",
+        "serverIp": "185.228.168.168",
+        "isBlocked": false
+      },
+      {
+        "server": "CleanBrowsing Security",
+        "serverIp": "185.228.168.9",
+        "isBlocked": false
+      },
+      {
+        "server": "CloudFlare",
+        "serverIp": "1.1.1.1",
+        "isBlocked": false
+      },
+      {
+        "server": "CloudFlare Family",
+        "serverIp": "1.1.1.3",
+        "isBlocked": false
+      },
+      {
+        "server": "Comodo Secure",
+        "serverIp": "8.26.56.26",
+        "isBlocked": false
+      },
+      {
+        "server": "Google DNS",
+        "serverIp": "8.8.8.8",
+        "isBlocked": false
+      },
+      {
+        "server": "Neustar Family",
+        "serverIp": "156.154.70.3",
+        "isBlocked": false
+      },
+      {
+        "server": "Neustar Protection",
+        "serverIp": "156.154.70.2",
+        "isBlocked": false
+      },
+      {
+        "server": "Norton Family",
+        "serverIp": "199.85.126.20",
+        "isBlocked": false
+      },
+      {
+        "server": "OpenDNS",
+        "serverIp": "208.67.222.222",
+        "isBlocked": false
+      },
+      {
+        "server": "OpenDNS Family",
+        "serverIp": "208.67.222.123",
+        "isBlocked": false
+      },
+      {
+        "server": "Quad9",
+        "serverIp": "9.9.9.9",
+        "isBlocked": false
+      },
+      {
+        "server": "Yandex Family",
+        "serverIp": "77.88.8.7",
+        "isBlocked": false
+      },
+      {
+        "server": "Yandex Safe",
+        "serverIp": "77.88.8.88",
+        "isBlocked": false
+      }
+    ]
+  },
+  "features": {
+    "domain": "github.com",
+    "first": 1397692800000,
+    "last": 1767744000000,
+    "groups": [
+      {
+        "name": "cdn",
+        "live": 30,
+        "dead": 1,
+        "latest": 1767744000000,
+        "oldest": 1397692800000,
+        "categories": []
+      },
+      {
+        "name": "javascript",
+        "live": 111,
+        "dead": 22,
+        "latest": 1767744000000,
+        "oldest": 1397692800000,
+        "categories": [
+          {
+            "live": 33,
+            "dead": 8,
+            "latest": 1767657600000,
+            "oldest": 1397692800000,
+            "name": "JavaScript Library"
+          },
+          {
+            "live": 7,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1753401600000,
+            "name": "jQuery Plugin"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1764720000000,
+            "oldest": 1753401600000,
+            "name": "Animation"
+          },
+          {
+            "live": 3,
+            "dead": 1,
+            "latest": 1767657600000,
+            "oldest": 1398211200000,
+            "name": "UI"
+          },
+          {
+            "live": 5,
+            "dead": 0,
+            "latest": 1767571200000,
+            "oldest": 1753401600000,
+            "name": "Framework"
+          },
+          {
+            "live": 2,
+            "dead": 4,
+            "latest": 1767657600000,
+            "oldest": 1397779200000,
+            "name": "Compatibility"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1759795200000,
+            "oldest": 1759795200000,
+            "name": "Charting"
+          }
+        ]
+      },
+      {
+        "name": "Web Master",
+        "live": 1,
+        "dead": 0,
+        "latest": 1767744000000,
+        "oldest": 1597363200000,
+        "categories": []
+      },
+      {
+        "name": "link",
+        "live": 32,
+        "dead": 2,
+        "latest": 1767744000000,
+        "oldest": 1397692800000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1744156800000,
+            "name": "Policy"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767139200000,
+            "oldest": 1764460800000,
+            "name": "Adult"
+          }
+        ]
+      },
+      {
+        "name": "mobile",
+        "live": 3,
+        "dead": 1,
+        "latest": 1767744000000,
+        "oldest": 1397779200000,
+        "categories": []
+      },
+      {
+        "name": "analytics",
+        "live": 47,
+        "dead": 33,
+        "latest": 1767744000000,
+        "oldest": 1397692800000,
+        "categories": [
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1744156800000,
+            "name": "Social Management"
+          },
+          {
+            "live": 25,
+            "dead": 13,
+            "latest": 1767657600000,
+            "oldest": 1397692800000,
+            "name": "Application Performance"
+          },
+          {
+            "live": 6,
+            "dead": 20,
+            "latest": 1767744000000,
+            "oldest": 1397692800000,
+            "name": "Audience Measurement"
+          },
+          {
+            "live": 1,
+            "dead": 20,
+            "latest": 1767225600000,
+            "oldest": 1397692800000,
+            "name": "Visitor Count Tracking"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752883200000,
+            "name": "CRM"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1765238400000,
+            "oldest": 1752969600000,
+            "name": "Mobile"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1760572800000,
+            "oldest": 1753056000000,
+            "name": "Fraud Prevention"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767139200000,
+            "oldest": 1753228800000,
+            "name": "Conversion Optimization"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1766793600000,
+            "oldest": 1753228800000,
+            "name": "Site Optimization"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752883200000,
+            "name": "Personalization"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752883200000,
+            "name": "Marketing Automation"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752969600000,
+            "name": "Error Tracking"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752883200000,
+            "name": "Lead Generation"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1763942400000,
+            "oldest": 1756771200000,
+            "name": "Data Management Platform"
+          }
+        ]
+      },
+      {
+        "name": "widgets",
+        "live": 150,
+        "dead": 9,
+        "latest": 1767744000000,
+        "oldest": 1397779200000,
+        "categories": [
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1744156800000,
+            "name": "Mobile"
+          },
+          {
+            "live": 3,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752969600000,
+            "name": "Feedback Forms and Surveys"
+          },
+          {
+            "live": 6,
+            "dead": 0,
+            "latest": 1767398400000,
+            "oldest": 1753401600000,
+            "name": "Privacy Compliance"
+          },
+          {
+            "live": 14,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752796800000,
+            "name": "Image Provider"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767571200000,
+            "oldest": 1752796800000,
+            "name": "Login"
+          },
+          {
+            "live": 5,
+            "dead": 0,
+            "latest": 1767571200000,
+            "oldest": 1752796800000,
+            "name": "WordPress Plugins"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752969600000,
+            "name": "Fonts"
+          },
+          {
+            "live": 4,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Live Chat"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767225600000,
+            "oldest": 1753228800000,
+            "name": "AI"
+          },
+          {
+            "live": 3,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752796800000,
+            "name": "Web Badge"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1764201600000,
+            "oldest": 1757030400000,
+            "name": "Bookmarking"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1764633600000,
+            "oldest": 1757289600000,
+            "name": "Site Search"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1765670400000,
+            "oldest": 1753574400000,
+            "name": "Translation"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767225600000,
+            "oldest": 1757376000000,
+            "name": "Tag Management"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1766880000000,
+            "oldest": 1753833600000,
+            "name": "Financial"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1765584000000,
+            "oldest": 1753574400000,
+            "name": "Bookings"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1764979200000,
+            "oldest": 1764979200000,
+            "name": "Social Sharing"
+          }
+        ]
+      },
+      {
+        "name": "cms",
+        "live": 28,
+        "dead": 0,
+        "latest": 1767744000000,
+        "oldest": 1752796800000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Hosted Solution"
+          },
+          {
+            "live": 3,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Enterprise"
+          },
+          {
+            "live": 3,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Headless"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Mobile"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752969600000,
+            "name": "Ticketing System"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1766966400000,
+            "oldest": 1754611200000,
+            "name": "Job Board"
+          },
+          {
+            "live": 8,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752969600000,
+            "name": "Open Source"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1753920000000,
+            "name": "Community CMS"
+          },
+          {
+            "live": 3,
+            "dead": 0,
+            "latest": 1766793600000,
+            "oldest": 1753401600000,
+            "name": "Blog"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1766534400000,
+            "oldest": 1758758400000,
+            "name": "Landing Page"
+          }
+        ]
+      },
+      {
+        "name": "language",
+        "live": 16,
+        "dead": 0,
+        "latest": 1767744000000,
+        "oldest": 1397952000000,
+        "categories": []
+      },
+      {
+        "name": "framework",
+        "live": 29,
+        "dead": 0,
+        "latest": 1767744000000,
+        "oldest": 1597363200000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1744156800000,
+            "name": "Schema"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1764806400000,
+            "oldest": 1757116800000,
+            "name": "WordPress Theme"
+          }
+        ]
+      },
+      {
+        "name": "Server",
+        "live": 16,
+        "dead": 0,
+        "latest": 1767744000000,
+        "oldest": 1397692800000,
+        "categories": []
+      },
+      {
+        "name": "ssl",
+        "live": 5,
+        "dead": 1,
+        "latest": 1767744000000,
+        "oldest": 1397692800000,
+        "categories": []
+      },
+      {
+        "name": "hosting",
+        "live": 42,
+        "dead": 28,
+        "latest": 1767484800000,
+        "oldest": 1397692800000,
+        "categories": [
+          {
+            "live": 26,
+            "dead": 27,
+            "latest": 1767484800000,
+            "oldest": 1397692800000,
+            "name": "US hosting"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1760227200000,
+            "oldest": 1753056000000,
+            "name": "Australian hosting"
+          },
+          {
+            "live": 1,
+            "dead": 1,
+            "latest": 1767139200000,
+            "oldest": 1397952000000,
+            "name": "Cloud Hosting"
+          },
+          {
+            "live": 2,
+            "dead": 1,
+            "latest": 1767139200000,
+            "oldest": 1397952000000,
+            "name": "Cloud PaaS"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767139200000,
+            "oldest": 1753574400000,
+            "name": "French hosting"
+          },
+          {
+            "live": 10,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1729728000000,
+            "name": "Server Location"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1766534400000,
+            "oldest": 1764115200000,
+            "name": "Canadian hosting"
+          }
+        ]
+      },
+      {
+        "name": "Web Server",
+        "live": 19,
+        "dead": 10,
+        "latest": 1767571200000,
+        "oldest": 1397692800000,
+        "categories": [
+          {
+            "live": 16,
+            "dead": 9,
+            "latest": 1767571200000,
+            "oldest": 1397692800000,
+            "name": "Varnish Server"
+          }
+        ]
+      },
+      {
+        "name": "agency",
+        "live": 12,
+        "dead": 0,
+        "latest": 1767484800000,
+        "oldest": 1752969600000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767052800000,
+            "oldest": 1752969600000,
+            "name": "UK Agency"
+          },
+          {
+            "live": 5,
+            "dead": 0,
+            "latest": 1765929600000,
+            "oldest": 1754006400000,
+            "name": "US Agency"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1755043200000,
+            "oldest": 1755043200000,
+            "name": "Indian Agency"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1755475200000,
+            "name": "New Zealand Agency"
+          }
+        ]
+      },
+      {
+        "name": "ns",
+        "live": 43,
+        "dead": 0,
+        "latest": 1767484800000,
+        "oldest": 1729728000000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1729728000000,
+            "name": "Enterprise DNS"
+          }
+        ]
+      },
+      {
+        "name": "mx",
+        "live": 14,
+        "dead": 0,
+        "latest": 1767484800000,
+        "oldest": 1752969600000,
+        "categories": [
+          {
+            "live": 3,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752969600000,
+            "name": "Business Email Hosting"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752969600000,
+            "name": "Campaign Management"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752969600000,
+            "name": "DMARC"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1765238400000,
+            "oldest": 1757894400000,
+            "name": "Marketing Platform"
+          }
+        ]
+      },
+      {
+        "name": "payment",
+        "live": 28,
+        "dead": 1,
+        "latest": 1767657600000,
+        "oldest": 1397865600000,
+        "categories": [
+          {
+            "live": 4,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752883200000,
+            "name": "Checkout Buttons"
+          },
+          {
+            "live": 4,
+            "dead": 0,
+            "latest": 1767484800000,
+            "oldest": 1752796800000,
+            "name": "Payments Processor"
+          },
+          {
+            "live": 9,
+            "dead": 1,
+            "latest": 1767657600000,
+            "oldest": 1397865600000,
+            "name": "Payment Acceptance"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752796800000,
+            "name": "Donation"
+          },
+          {
+            "live": 4,
+            "dead": 0,
+            "latest": 1767657600000,
+            "oldest": 1752969600000,
+            "name": "Currency"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1764547200000,
+            "oldest": 1752883200000,
+            "name": "Pay Later"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1766188800000,
+            "oldest": 1756684800000,
+            "name": "Bitcoin"
+          }
+        ]
+      },
+      {
+        "name": "ads",
+        "live": 9,
+        "dead": 0,
+        "latest": 1767139200000,
+        "oldest": 1752969600000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1766016000000,
+            "oldest": 1753056000000,
+            "name": "Affiliate Programs"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1764720000000,
+            "oldest": 1753747200000,
+            "name": "Ad Analytics"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1764720000000,
+            "oldest": 1753747200000,
+            "name": "Ad Server"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1764720000000,
+            "oldest": 1753747200000,
+            "name": "Digital Video Ads"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1764720000000,
+            "oldest": 1753747200000,
+            "name": "Search"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1763942400000,
+            "oldest": 1756425600000,
+            "name": "Header Bidding"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767139200000,
+            "oldest": 1767139200000,
+            "name": "Ad Network"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767139200000,
+            "oldest": 1767139200000,
+            "name": "Retargeting / Remarketing"
+          }
+        ]
+      },
+      {
+        "name": "media",
+        "live": 10,
+        "dead": 0,
+        "latest": 1767744000000,
+        "oldest": 1752796800000,
+        "categories": [
+          {
+            "live": 3,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Online Video Platform"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1766102400000,
+            "oldest": 1752969600000,
+            "name": "Video Players"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1765238400000,
+            "oldest": 1752969600000,
+            "name": "Video Analytics"
+          },
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Live Stream / Webcast"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752796800000,
+            "name": "Social Video Platform"
+          }
+        ]
+      },
+      {
+        "name": "copyright",
+        "live": 1,
+        "dead": 0,
+        "latest": 1767225600000,
+        "oldest": 1753142400000,
+        "categories": []
+      },
+      {
+        "name": "feeds",
+        "live": 4,
+        "dead": 3,
+        "latest": 1767657600000,
+        "oldest": 1397779200000,
+        "categories": []
+      },
+      {
+        "name": "mapping",
+        "live": 9,
+        "dead": 1,
+        "latest": 1767744000000,
+        "oldest": 1744156800000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1767744000000,
+            "oldest": 1752883200000,
+            "name": "Maps"
+          }
+        ]
+      },
+      {
+        "name": "CDN",
+        "live": 1,
+        "dead": 0,
+        "latest": 1767744000000,
+        "oldest": 1748649600000,
+        "categories": []
+      },
+      {
+        "name": "shop",
+        "live": 3,
+        "dead": 0,
+        "latest": 1766620800000,
+        "oldest": 1752796800000,
+        "categories": [
+          {
+            "live": 2,
+            "dead": 0,
+            "latest": 1766620800000,
+            "oldest": 1752796800000,
+            "name": "Enterprise"
+          },
+          {
+            "live": 1,
+            "dead": 0,
+            "latest": 1765152000000,
+            "oldest": 1753056000000,
+            "name": "Non Platform"
+          }
+        ]
+      },
+      {
+        "name": "robots",
+        "live": 3,
+        "dead": 0,
+        "latest": 1767484800000,
+        "oldest": 1763596800000,
+        "categories": []
+      }
+    ]
+  }
+}
